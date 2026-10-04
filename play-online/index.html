@@ -51,66 +51,66 @@
           <span class="brand-sub">AI SOLVER & COMBO LAB</span>
         </div>
       </a>
-      <nav class="top-nav">
+      <nav class="top-nav" id="siteNav">
         <a href="/" class="nav-link">AI Solver</a>
         <a href="/play-online/" class="nav-link active">🕹️ Play Online</a>
         <a href="/how-it-works/" class="nav-link">Strategy Guide</a>
       </nav>
-      <div class="lang-switch">
-        <a href="/play-online/" class="lang-btn active">EN</a>
-        <a href="/ja/play-online/" class="lang-btn">日本語</a>
+      <div class="header-right">
+        <div class="lang-switch">
+          <a href="/play-online/" class="lang-btn active">EN</a>
+          <a href="/ja/play-online/" class="lang-btn">日本語</a>
+        </div>
+        <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">☰</button>
       </div>
     </div>
   </header>
 
   <!-- Main Container -->
   <main class="main-content">
-    <!-- Breadcrumbs -->
-    <div style="font-size: 0.82rem; color: var(--text-dim); margin-bottom: 0.75rem;">
-      <a href="/" style="color: var(--text-muted); text-decoration: none;">Home</a> / <span style="color: var(--primary-accent);">Play Online</span>
-    </div>
-
-    <!-- Compact Title Bar -->
-    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
-      <h1 style="font-size: clamp(1.3rem, 3vw, 1.7rem); font-weight: 900; color: #fff; margin: 0; display: flex; align-items: center; gap: 0.5rem;">
-        🎮 Play Block Blast Online Free
-      </h1>
-      <span class="badge-tag" style="margin: 0; padding: 0.25rem 0.65rem; font-size: 0.72rem;">WEB PLAY • UNBLOCKED</span>
-    </div>
-
-    <!-- Embedded Playable Game Iframe -->
-    <div id="gameWrapper" class="game-iframe-wrapper">
-      <iframe id="gameIframe" src="https://blockblast2.github.io/" title="Block Blast Free Play Online" allow="fullscreen; autoplay" scrolling="no" loading="lazy"></iframe>
-    </div>
-
-    <!-- Arcade Action Toolbar -->
-    <div class="game-action-toolbar">
-      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-        <button id="fullscreenBtn" class="btn-secondary" type="button" title="Fullscreen Mode" style="background: rgba(0, 242, 254, 0.15); border-color: var(--primary-accent); color: #fff;">
-          <span>⛶</span> Fullscreen
-        </button>
-        <button id="restartBtn" class="btn-secondary" type="button" title="Restart Game">
-          <span>🔄</span> Restart
-        </button>
-        <button id="theaterBtn" class="btn-secondary" type="button" title="Expand View">
-          <span>🖥️</span> Theater View
-        </button>
+    <div class="play-game-card">
+      <!-- Breadcrumbs & Title Bar -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.65rem;">
+        <div style="font-size: 0.8rem; color: var(--text-dim);">
+          <a href="/" style="color: var(--text-muted); text-decoration: none;">Home</a> / <span style="color: var(--primary-accent);">Play Online</span>
+        </div>
+        <span class="badge-tag" style="margin: 0; padding: 0.2rem 0.6rem; font-size: 0.68rem;">UNBLOCKED WEB</span>
       </div>
 
-      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;">
-        <a href="/" class="btn-secondary" style="text-decoration: none; background: rgba(157, 78, 221, 0.15); border-color: var(--accent-purple); color: #fff;">
-          <span>🤖</span> Open AI Solver
-        </a>
-        <button id="shareBtn" class="btn-secondary" type="button">
-          <span>🔗</span> Share
-        </button>
+      <h1 style="font-size: clamp(1.2rem, 3vw, 1.6rem); font-weight: 900; color: #fff; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.4rem;">
+        🎮 Play Block Blast Online Free
+      </h1>
+
+      <!-- Embedded Playable Game Iframe -->
+      <div id="gameWrapper" class="game-iframe-wrapper">
+        <iframe id="gameIframe" src="https://blockblast2.github.io/" title="Block Blast Free Play Online" allow="fullscreen; autoplay" scrolling="no" loading="lazy"></iframe>
+      </div>
+
+      <!-- Arcade Action Toolbar -->
+      <div class="game-action-toolbar">
+        <div class="toolbar-group">
+          <button id="fullscreenBtn" class="btn-secondary" type="button" title="Fullscreen Mode" style="background: rgba(0, 242, 254, 0.15); border-color: var(--primary-accent); color: #fff;">
+            <span>⛶</span> Fullscreen
+          </button>
+          <button id="restartBtn" class="btn-secondary" type="button" title="Restart Game">
+            <span>🔄</span> Restart
+          </button>
+        </div>
+        <div class="toolbar-group">
+          <a href="/" class="btn-secondary" style="text-decoration: none; background: rgba(157, 78, 221, 0.15); border-color: var(--accent-purple); color: #fff;">
+            <span>🤖</span> AI Solver
+          </a>
+          <button id="shareBtn" class="btn-secondary" type="button" title="Share with friends">
+            <span>🔗</span> Share Game
+          </button>
+        </div>
       </div>
     </div>
 
     <!-- Game Rules & Controls Guide -->
     <section class="content-block">
       <div class="section-badge" style="color: var(--primary-accent); font-weight: 800; font-size: 0.8rem; margin-bottom: 0.5rem;">GAMEPLAY OVERVIEW</div>
-      <h2>How to Play Block Blast on Web</h2>
+      <h2>How to Play Block Blast on Web & Mobile</h2>
       <p>
         Block Blast is an addictive hybrid of classic Tetris geometry and 8×8 grid board placement. The rules are intuitive yet offer infinite strategic depth:
       </p>
@@ -132,6 +132,49 @@
     </section>
   </main>
 
+  <!-- Share Modal Popup -->
+  <div id="shareModal" class="share-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="shareModalTitle">
+    <div class="share-modal-card">
+      <div class="share-modal-header">
+        <h3 id="shareModalTitle" class="share-modal-title"><span>🚀</span> Share Block Blast</h3>
+        <button id="closeShareModal" class="share-close-btn" aria-label="Close modal">×</button>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+        Challenge your friends to beat your high score or practice puzzle clearing strategies!
+      </p>
+      <div class="share-link-box">
+        <input id="shareLinkInput" class="share-link-input" type="text" readonly value="https://blockblast.si/play-online/">
+        <button id="copyShareLinkBtn" class="btn-secondary" style="background: var(--primary-accent); color: #000; font-weight: 800; border: none; white-space: nowrap;">
+          Copy
+        </button>
+      </div>
+      <div class="share-social-grid">
+        <a id="shareTwitter" class="share-social-btn" href="#" target="_blank" rel="noopener">
+          <span class="soc-icon">𝕏</span>
+          <span>X / Twitter</span>
+        </a>
+        <a id="shareWhatsApp" class="share-social-btn" href="#" target="_blank" rel="noopener">
+          <span class="soc-icon">💬</span>
+          <span>WhatsApp</span>
+        </a>
+        <a id="shareTelegram" class="share-social-btn" href="#" target="_blank" rel="noopener">
+          <span class="soc-icon">✈️</span>
+          <span>Telegram</span>
+        </a>
+        <a id="shareReddit" class="share-social-btn" href="#" target="_blank" rel="noopener">
+          <span class="soc-icon">👾</span>
+          <span>Reddit</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toastNotice" class="toast-notice">
+    <span>✅</span>
+    <span id="toastText">Link copied to clipboard!</span>
+  </div>
+
   <!-- Site Footer -->
   <footer class="site-footer">
     <div class="footer-content">
@@ -143,13 +186,36 @@
   </footer>
 
   <script>
+    // Navigation Toggle for Mobile
+    const menuToggle = document.getElementById('menuToggle');
+    const siteNav = document.getElementById('siteNav');
+    if (menuToggle && siteNav) {
+      menuToggle.addEventListener('click', () => {
+        siteNav.classList.toggle('open');
+      });
+    }
+
     // Arcade Toolbar Controls
     const gameWrapper = document.getElementById('gameWrapper');
     const gameIframe = document.getElementById('gameIframe');
     const fullscreenBtn = document.getElementById('fullscreenBtn');
     const restartBtn = document.getElementById('restartBtn');
-    const theaterBtn = document.getElementById('theaterBtn');
     const shareBtn = document.getElementById('shareBtn');
+    const shareModal = document.getElementById('shareModal');
+    const closeShareModal = document.getElementById('closeShareModal');
+    const copyShareLinkBtn = document.getElementById('copyShareLinkBtn');
+    const shareLinkInput = document.getElementById('shareLinkInput');
+    const toastNotice = document.getElementById('toastNotice');
+    const toastText = document.getElementById('toastText');
+
+    function showToast(msg) {
+      if (!toastNotice) return;
+      toastText.textContent = msg;
+      toastNotice.classList.add('show');
+      setTimeout(() => {
+        toastNotice.classList.remove('show');
+      }, 2500);
+    }
 
     if (fullscreenBtn && gameWrapper) {
       fullscreenBtn.addEventListener('click', () => {
@@ -169,17 +235,59 @@
       });
     }
 
-    if (theaterBtn) {
-      theaterBtn.addEventListener('click', () => {
-        document.body.classList.toggle('theater-active');
+    // Sharing System (Native Web Share on Mobile, Modal / Clipboard fallback on Desktop)
+    const shareUrl = window.location.href;
+    const shareTitle = 'Play Block Blast Online Free (Unblocked) - BlockBlast.si';
+    const shareDesc = 'Check out this awesome Block Blast browser game! Can you beat my high score?';
+
+    if (shareLinkInput) {
+      shareLinkInput.value = shareUrl;
+    }
+
+    // Setup social links
+    const shareTwitter = document.getElementById('shareTwitter');
+    const shareWhatsApp = document.getElementById('shareWhatsApp');
+    const shareTelegram = document.getElementById('shareTelegram');
+    const shareReddit = document.getElementById('shareReddit');
+
+    if (shareTwitter) shareTwitter.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareDesc)}&url=${encodeURIComponent(shareUrl)}`;
+    if (shareWhatsApp) shareWhatsApp.href = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareDesc + ' ' + shareUrl)}`;
+    if (shareTelegram) shareTelegram.href = `https://t.me/share/url?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareDesc)}`;
+    if (shareReddit) shareReddit.href = `https://reddit.com/submit?url=${encodeURIComponent(shareUrl)}&title=${encodeURIComponent(shareTitle)}`;
+
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share && /mobile|android|iphone|ipad/i.test(navigator.userAgent)) {
+          try {
+            await navigator.share({
+              title: shareTitle,
+              text: shareDesc,
+              url: shareUrl
+            });
+            return;
+          } catch (e) {
+            // User cancelled or fallback to modal
+          }
+        }
+        if (shareModal) shareModal.classList.add('open');
       });
     }
 
-    if (shareBtn) {
-      shareBtn.addEventListener('click', () => {
-        navigator.clipboard.writeText(window.location.href).then(() => {
-          shareBtn.innerHTML = '<span>✅</span> Copied!';
-          setTimeout(() => { shareBtn.innerHTML = '<span>🔗</span> Share'; }, 2000);
+    if (closeShareModal && shareModal) {
+      closeShareModal.addEventListener('click', () => {
+        shareModal.classList.remove('open');
+      });
+      shareModal.addEventListener('click', (e) => {
+        if (e.target === shareModal) shareModal.classList.remove('open');
+      });
+    }
+
+    if (copyShareLinkBtn && shareLinkInput) {
+      copyShareLinkBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(shareLinkInput.value).then(() => {
+          copyShareLinkBtn.textContent = 'Copied! 🎉';
+          showToast('Link copied to clipboard!');
+          setTimeout(() => { copyShareLinkBtn.textContent = 'Copy'; }, 2000);
         });
       });
     }
