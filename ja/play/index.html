@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ブロックブラスト 無料オンラインプレイ (インストール不要) - Block Blast Web</title>
+  <meta name="description" content="ブロックブラスト（Block Blast）をブラウザで今すぐ無料プレイ！ダウンロード・登録不要。PC・スマホで8×8ブロックパズルと爽快コンボを楽しもう。">
+  <meta name="keywords" content="ブロックブラスト 無料, ブロックブラスト オンライン, ブロックブラスト ブラウザ, block blast play free 日本語">
+  
+  <link rel="canonical" href="https://blockblast.si/ja/play/">
+  <link rel="alternate" hreflang="en" href="https://blockblast.si/play/">
+  <link rel="alternate" hreflang="ja" href="https://blockblast.si/ja/play/">
+  
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧩</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <!-- Header Bar -->
+  <header class="site-header">
+    <div class="header-content">
+      <a href="/ja/" class="brand-logo">
+        <span class="brand-icon">🧩</span>
+        <div class="logo-text">
+          <span class="brand-title">BLOCKBLAST.SI</span>
+          <span class="brand-sub">AI 解析＆コンボ研究所</span>
+        </div>
+      </a>
+      <nav class="top-nav">
+        <a href="/ja/" class="nav-link">AI 解析ツール</a>
+        <a href="/ja/play/" class="nav-link active">🕹️ 無料オンラインプレイ</a>
+        <a href="/how-it-works/" class="nav-link">攻略・計算理論</a>
+      </nav>
+      <div class="lang-switch">
+        <a href="/play/" class="lang-btn">EN</a>
+        <a href="/ja/play/" class="lang-btn active">日本語</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-content">
+    <div style="font-size: 0.82rem; color: var(--text-dim); margin-bottom: 0.75rem;">
+      <a href="/ja/" style="color: var(--text-muted); text-decoration: none;">ホーム</a> / <span style="color: var(--primary-accent);">無料オンラインプレイ</span>
+    </div>
+
+    <!-- Title Bar -->
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
+      <h1 style="font-size: clamp(1.3rem, 3vw, 1.7rem); font-weight: 900; color: #fff; margin: 0; display: flex; align-items: center; gap: 0.5rem;">
+        🎮 ブロックブラスト 無料オンラインプレイ
+      </h1>
+      <span class="badge-tag" style="margin: 0; padding: 0.25rem 0.65rem; font-size: 0.72rem;">WEB PLAY • ダウンロード不要</span>
+    </div>
+
+    <!-- Embedded Game Wrapper -->
+    <div id="gameWrapper" class="game-iframe-wrapper">
+      <iframe id="gameIframe" src="https://blockblast2.github.io/" title="Block Blast Free Play Online" allow="fullscreen; autoplay" scrolling="no" loading="lazy"></iframe>
+    </div>
+
+    <!-- Arcade Action Toolbar -->
+    <div class="game-action-toolbar">
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+        <button id="fullscreenBtn" class="btn-secondary" type="button" title="全画面表示" style="background: rgba(0, 242, 254, 0.15); border-color: var(--primary-accent); color: #fff;">
+          <span>⛶</span> 全画面 (Fullscreen)
+        </button>
+        <button id="restartBtn" class="btn-secondary" type="button" title="ゲームをリスタート">
+          <span>🔄</span> リスタート
+        </button>
+        <button id="theaterBtn" class="btn-secondary" type="button" title="ワイド表示">
+          <span>🖥️</span> シアターモード
+        </button>
+      </div>
+
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;">
+        <a href="/ja/" class="btn-secondary" style="text-decoration: none; background: rgba(157, 78, 221, 0.15); border-color: var(--accent-purple); color: #fff;">
+          <span>🤖</span> AI 解析ツールを開く
+        </a>
+        <button id="shareBtn" class="btn-secondary" type="button">
+          <span>🔗</span> 共有
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p class="disclaimer-text">
+        <strong>免責事項:</strong> BlockBlast.si はファンおよびプレイヤー向けの独立した非公式解析ツールです。Hungry Studio との提携はありません。
+      </p>
+      <p class="copyright-sub">BlockBlast.si • Synthetic Intelligence Puzzle Analytics</p>
+    </div>
+  </footer>
+
+  <script>
+    const gameWrapper = document.getElementById('gameWrapper');
+    const gameIframe = document.getElementById('gameIframe');
+    const fullscreenBtn = document.getElementById('fullscreenBtn');
+    const restartBtn = document.getElementById('restartBtn');
+    const theaterBtn = document.getElementById('theaterBtn');
+    const shareBtn = document.getElementById('shareBtn');
+
+    if (fullscreenBtn && gameWrapper) {
+      fullscreenBtn.addEventListener('click', () => {
+        if (gameWrapper.requestFullscreen) {
+          gameWrapper.requestFullscreen();
+        } else if (gameWrapper.webkitRequestFullscreen) {
+          gameWrapper.webkitRequestFullscreen();
+        }
+      });
+    }
+
+    if (restartBtn && gameIframe) {
+      restartBtn.addEventListener('click', () => {
+        const src = gameIframe.src;
+        gameIframe.src = '';
+        setTimeout(() => { gameIframe.src = src; }, 100);
+      });
+    }
+
+    if (theaterBtn) {
+      theaterBtn.addEventListener('click', () => {
+        document.body.classList.toggle('theater-active');
+      });
+    }
+
+    if (shareBtn) {
+      shareBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+          shareBtn.innerHTML = '<span>✅</span> コピー完了!';
+          setTimeout(() => { shareBtn.innerHTML = '<span>🔗</span> 共有'; }, 2000);
+        });
+      });
+    }
+  </script>
+</body>
+</html>

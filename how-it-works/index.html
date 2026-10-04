@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How the Block Blast AI Solver Works - Algorithm & Strategy Guide</title>
+  <meta name="description" content="Discover the mathematics and heuristic search algorithms behind the Block Blast AI Solver. Learn how to maintain 50+ combo chains and prevent sudden game-overs.">
+  <meta name="keywords" content="block blast algorithm, how block blast solver works, block blast strategy math, block blast combo formula">
+  
+  <link rel="canonical" href="https://blockblast.si/how-it-works/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧩</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <!-- Header Bar -->
+  <header class="site-header">
+    <div class="header-content">
+      <a href="/" class="brand-logo">
+        <span class="brand-icon">🧩</span>
+        <div class="logo-text">
+          <span class="brand-title">BLOCKBLAST.SI</span>
+          <span class="brand-sub">AI SOLVER & COMBO LAB</span>
+        </div>
+      </a>
+      <nav class="top-nav">
+        <a href="/" class="nav-link">AI Solver</a>
+        <a href="/play/" class="nav-link">🕹️ Play Online</a>
+        <a href="/how-it-works/" class="nav-link active">Strategy Guide</a>
+      </nav>
+      <div class="lang-switch">
+        <a href="/how-it-works/" class="lang-btn active">EN</a>
+        <a href="/ja/" class="lang-btn">日本語</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-content">
+    <div style="font-size: 0.82rem; color: var(--text-dim); margin-bottom: 0.75rem;">
+      <a href="/" style="color: var(--text-muted); text-decoration: none;">Home</a> / <span style="color: var(--primary-accent);">How It Works</span>
+    </div>
+
+    <section class="hero-section">
+      <div class="badge-tag">MATHEMATICAL PUZZLE THEORY</div>
+      <h1 class="hero-title">HOW THE BLOCK BLAST AI SOLVER WORKS</h1>
+      <p class="hero-sub">
+        Explore the tree-search permutations, survival heuristics, and probabilistic combo models that power BlockBlast.si.
+      </p>
+    </section>
+
+    <!-- AI Solver Visual Showcase -->
+    <div style="max-width: 860px; margin: 0 auto 2.5rem auto; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-glow); box-shadow: 0 12px 35px rgba(0,0,0,0.6);">
+      <img src="/images/ai-solver-demo.jpg" alt="Neural Block Blast Solver Analytics Demonstration" loading="lazy" width="720" height="405" style="width: 100%; height: auto; display: block;">
+    </div>
+
+    <!-- Section 1: Tree Search Permutations -->
+    <section class="content-block">
+      <div class="section-badge" style="color: var(--primary-accent); font-weight: 800; font-size: 0.8rem; margin-bottom: 0.5rem;">PERMUTATION LOGIC</div>
+      <h2>1. The 6-Way Factorial Permutation Tree</h2>
+      <p>
+        In standard Block Blast, players are handed 3 pieces at a time. The order in which pieces are placed drastically alters line-clearing cascades:
+      </p>
+
+      <div style="background: #080e18; padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border-color); font-family: var(--font-mono); font-size: 0.9rem; color: var(--primary-accent); margin: 1rem 0;">
+        Permutations = 3! = 3 × 2 × 1 = 6 Distinct Branches<br>
+        [A ➔ B ➔ C], [A ➔ C ➔ B], [B ➔ A ➔ C], [B ➔ C ➔ A], [C ➔ A ➔ B], [C ➔ B ➔ A]
+      </div>
+      <p>
+        For each permutation, our client-side solver computes every valid coordinate (0 ≤ row ≤ 7, 0 ≤ col ≤ 7), checking board intersections and executing simultaneous row and column removals in real time.
+      </p>
+    </section>
+
+    <!-- Section 2: Heuristic Scoring Function -->
+    <section class="content-block">
+      <div class="section-badge" style="color: var(--accent-gold); font-weight: 800; font-size: 0.8rem; margin-bottom: 0.5rem;">EVALUATION FUNCTION</div>
+      <h2>2. Multi-Factor Survival Evaluation</h2>
+      <p>
+        A move that clears 2 lines immediately is NOT always optimal if it leaves the remaining board fragmented with isolated 1x1 holes. Our evaluation function balances 4 core vectors:
+      </p>
+
+      <ul style="color: var(--text-muted); padding-left: 1.25rem; font-size: 0.92rem; display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem;">
+        <li><strong>Line Clear Score:</strong> Immediate points earned from horizontal and vertical line eliminations.</li>
+        <li><strong>3×3 Giant Box Reserve (+400 pts):</strong> Heavily rewards board states that leave a clear 3×3 sector open for large square block spawns.</li>
+        <li><strong>Isolated Hole Penalty (-50 pts / hole):</strong> Punishes empty single squares surrounded on 3 or 4 sides by filled blocks that cannot be cleared without specific 1x1 drops.</li>
+        <li><strong>Empty Board Density (+15 pts / free cell):</strong> Maintains maximal open surface area across the 8×8 grid.</li>
+      </ul>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="content-block" style="text-align: center; border-color: var(--border-glow);">
+      <h2>Put the Algorithm to Work on Your Board</h2>
+      <p>Launch the solver right now to rescue your current streak or practice in the sandbox.</p>
+      <a href="/" class="solve-btn" style="max-width: 280px; margin: 1rem auto 0 auto; text-decoration: none;">
+        <span>🚀 Open AI Solver Now →</span>
+      </a>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p class="disclaimer-text">
+        <strong>DISCLAIMER:</strong> BlockBlast.si is an independent companion tool and community portal. Not affiliated with or endorsed by Hungry Studio.
+      </p>
+      <p class="copyright-sub">BlockBlast.si • Synthetic Intelligence Puzzle Analytics & Solver</p>
+    </div>
+  </footer>
+</body>
+</html>
