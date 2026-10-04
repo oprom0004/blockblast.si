@@ -681,6 +681,10 @@ body {
   border: 1px solid var(--border-glow);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 242, 254, 0.1);
   margin-bottom: 0.75rem;
+  touch-action: none;
+  overscroll-behavior: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .game-iframe-wrapper iframe {
@@ -690,6 +694,7 @@ body {
   width: 100%;
   height: 100%;
   border: none;
+  touch-action: none;
 }
 
 .game-action-toolbar {
