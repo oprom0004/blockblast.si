@@ -113,10 +113,20 @@
       <p class="hero-sub">
         Stuck on a tricky board? Upload your game screenshot or tap the 8×8 grid below to calculate the optimal 1-2-3 move sequence, preserve massive combos, and escape game-over traps.
       </p>
+
+      <!-- Quick Action CTA Buttons (Mobile & Desktop Prominent Entry) -->
+      <div style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+        <a href="/play-online/" class="btn-secondary" style="background: linear-gradient(135deg, #00f2fe, #4facfe); color: #000; font-weight: 900; font-size: 0.95rem; padding: 0.75rem 1.4rem; text-decoration: none; border: none; box-shadow: 0 6px 22px rgba(0, 242, 254, 0.45); display: inline-flex; align-items: center; gap: 0.5rem; border-radius: 8px;">
+          <span style="font-size: 1.15rem;">🕹️</span> Play Block Blast Online (Free) →
+        </a>
+        <a href="#solverWorkspace" class="btn-secondary" style="background: rgba(157, 78, 221, 0.15); border: 1px solid var(--accent-purple); color: #fff; font-weight: 800; font-size: 0.92rem; padding: 0.75rem 1.25rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; border-radius: 8px;">
+          <span>🤖</span> Jump to AI Solver ↓
+        </a>
+      </div>
     </section>
 
     <!-- Interactive Solver Workspace -->
-    <div class="solver-workspace">
+    <div id="solverWorkspace" class="solver-workspace">
       <!-- Left Column: 8x8 Board & Dropzone -->
       <div class="solver-card">
         <div class="card-header-flex">
